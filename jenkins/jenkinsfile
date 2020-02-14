@@ -5,7 +5,7 @@ node {
   
   }
     
-def project_terra="/terraform/"
+def project_terra="terraform/"
 dir(project_terra) {
 
    stage('infrastructure creation'){
