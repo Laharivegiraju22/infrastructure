@@ -1,0 +1,18 @@
+node {
+ stage('Git-Checkout') {
+  
+     git 'https://github.com/Laharivegiraju22/infrastructure.git'
+  
+  }
+    
+def project_terra="/terraform/"
+dir(project_terra) {
+
+   stage('infrastructure creation'){
+  
+   sh label: 'terraform', script: '/bin/terraform  init'
+   sh label: 'terraform', script: '/bin/terraform  apply -input=false -auto-approve'
+   }
+}
+
+}
